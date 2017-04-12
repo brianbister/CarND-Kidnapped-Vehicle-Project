@@ -132,8 +132,9 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[],
     predicted.push_back(predicted_landmark);
   }
 
-  // Transform our observations to the global space.
   for (Particle &particle : particles) {
+
+    // Transform our observations to the global space.
     std::vector<LandmarkObs> transformed_observations;
     for (const LandmarkObs &observation : observations) {
       LandmarkObs transformed_observation;
